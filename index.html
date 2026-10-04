@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Athletics Indoor 2027</title>
+<meta name="description" content="2027 indoor track and field season: major USA and Europe meets, with where to watch in the US, start times in Eastern, and a map.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="World Athletics Indoor 2027">
+<meta property="og:description" content="Major indoor meets in the USA and Europe. Where to watch in the US, start times in Eastern, and a map.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 10'%3E%3Crect y='0' width='19' height='5.1' fill='%23FE8A4C'/%3E%3Crect y='5' width='19' height='5.1' fill='%23B68CFF'/%3E%3C/svg%3E">
+<script>
+  try {
+    var THEMES = ["light", "dark", "grey"];
+    var q = new URLSearchParams(location.search).get("theme"), t = THEMES.indexOf(q) > -1 ? q : localStorage.getItem("wai-theme");
+    if (THEMES.indexOf(t) > -1) document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#calendar">Skip to the calendar</a>
+
+<div class="flagbar" id="flag" aria-hidden="true"></div>
+
+<header class="page">
+  <div class="titlerow">
+    <div>
+      <h1>World Athletics Indoor 2027</h1>
+      <p id="sub"></p>
+    </div>
+    <div class="toolbar">
+      <select class="btn" id="theme" aria-label="Color scheme"></select>
+    </div>
+  </div>
+</header>
+
+<main class="page" id="main">
+  <div id="clock"></div>
+  <p class="note">Start times are US Eastern. A dash means the organizer hasn't published them yet -- none have, this far out from the season.</p>
+
+  <section aria-labelledby="h-cal">
+    <h2 id="h-cal"><span id="calendar" tabindex="-1">Calendar and map</span></h2>
+
+    <details class="filters" id="filters" open>
+      <summary>Filters</summary>
+      <div class="fgroup" id="f-when" role="group" aria-label="When"></div>
+      <div class="fgroup" id="f-series" role="group" aria-label="Region"></div>
+    </details>
+
+    <p id="count" role="status" aria-live="polite"></p>
+    <p class="sr" id="mapdesc">Interactive map of meet locations. The table below lists the same meets, and each row has a Map button.</p>
+    <div id="map" role="region" aria-label="Map of meet locations" aria-describedby="mapdesc"></div>
+    <div class="wrap"><table id="cal" class="stack"></table></div>
+    <p class="foot">Pin shapes match the Region filters. Click a row or its Map button to find it on the map (pins are approximate town centres). Results links appear once a meet has started.</p>
+  </section>
+
+  <section aria-labelledby="h-watch">
+    <h2 id="h-watch">Where to watch in the US</h2>
+    <div class="watch" id="watch"></div>
+  </section>
+
+  <section aria-labelledby="h-open">
+    <h2 id="h-open">Not confirmed yet</h2>
+    <ul id="open"></ul>
+  </section>
+
+  <section aria-labelledby="h-prices">
+    <h2 id="h-prices">Subscription costs</h2>
+    <p class="foot" style="margin:0 0 8px">Verify before subscribing.</p>
+    <div class="wrap"><table id="prices" class="stack"></table></div>
+  </section>
+
+  <section aria-labelledby="h-src">
+    <h2 id="h-src">Sources</h2>
+    <ul id="sources"></ul>
+  </section>
+
+  <footer>Data lives in data.js.</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin="anonymous"></script>
+<script src="data.js"></script>
+<script src="time.js"></script>
+<script src="banner.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
